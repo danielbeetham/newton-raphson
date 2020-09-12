@@ -25,6 +25,8 @@
 #                                                                           #
 # Requires: SymPy (https://www.sympy.org) and PrettyTable modules           #
 #           (https://github.com/ronisbr/PrettyTables.jl)                    #
+#                                                                           # 
+#           Written & Tested on Python 3.4.10 (may work with V3.x.x)        #
 #                                                                           #
 #############################################################################
 
