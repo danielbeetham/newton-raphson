@@ -32,9 +32,9 @@ f = None
 f_prime = None
 
 xold = None #This is our first guess at a root
-xnew = None #This is our first calculated value
+xnew = None #This is our calculated value for Xn+1
 tolerance = 6 # How many places to round to
-max_tries = 50 # Maximum number of times to iterate
+max_tries = 50 # Maximum number of times to iterate before giving up
 
 #Initalise pretty printing from SymPy. Will Use LATEX if available!
 sp.init_printing()
@@ -59,7 +59,7 @@ while goodexpression == False:
         print("Error! This function is ill defined - remember that you need to use phython syntax (with an x for the function variable)")
         print("\n")
     else:
-        #differentiate f
+        #differentiate our original function
         f_prime = sp.diff(f, x)
 
         print("\n")
@@ -83,7 +83,7 @@ while goodexpression == False:
         else:
             goodexpression = True
 
-#Enter a guess, and check the value
+#Enter a guess, and check the value to make sure it's a real number
 goodexpression = False
 while goodexpression == False:
     print("\n")
@@ -102,7 +102,6 @@ while goodexpression == False:
     
 n = 0
 t = pt.PrettyTable(["X_n","F(n)","F'(n)","X_n+1"])
-
 
 while n <= max_tries:
     
