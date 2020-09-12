@@ -16,6 +16,17 @@
 #                                                                           #
 #############################################################################
 
+#############################################################################
+#                                                                           #
+# Author: Daniel Beetham                                                    #
+#                                                                           #
+# Purpose: To quickly calculate an Approximation of a root using the        #
+#          Newton-Raphson Method                                            #
+#                                                                           #
+# Requires: SymPy (https://www.sympy.org) and PrettyTable modules           #
+#           (https://github.com/ronisbr/PrettyTables.jl)                    #
+#                                                                           #
+#############################################################################
 
 
 # SymPy is a symbolic manipulation library (ie. a CAS) written in Python!
@@ -108,7 +119,7 @@ while n <= max_tries:
     #This is the actual Newton/Raphson Method (one line of code!)
     xnew = xold - (f.subs(x, xold)/f_prime.subs(x, xold))
     
-    #print loading dots (only useful for big complicated functions)
+    #print loading dots (only useful for functions that will require a lot of computation time)
     print(".", end="")
     
     t.add_row([xold, f.evalf(subs={x: xold}), f_prime.evalf(subs={x: xold}), xnew.evalf()])
@@ -121,4 +132,6 @@ while n <= max_tries:
     n = n + 1
 
 print("\n")
+
+#Finally print our output table
 print(t)
