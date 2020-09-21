@@ -96,6 +96,23 @@ while goodexpression == False:
         else:
             goodexpression = True
 
+#Enter a value to round to, and check the value to make sure it's an integer
+goodexpression = False
+while goodexpression == False:
+    print("\n")
+    print("Precision do you want (in decimal places):\n")
+    rounding = input()
+    
+    try:
+        tolerance = sp.sympify(rounding)
+    except:
+        print("This can't be processed by SymPy is it neither a valid expression nor an integer\nTry again...")
+    else:
+        if tolerance.is_integer == True:
+            goodexpression = True
+        else:
+           print("This isn't an integer value, try again...")
+
 #Enter a guess, and check the value to make sure it's a real number
 goodexpression = False
 while goodexpression == False:
