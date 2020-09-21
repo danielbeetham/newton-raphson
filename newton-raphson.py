@@ -26,7 +26,7 @@
 # Requires: SymPy (https://www.sympy.org) and PrettyTable modules           #
 #           (https://github.com/ronisbr/PrettyTables.jl)                    #
 #                                                                           # 
-#           Written & Tested on Python 3.4.10 (may work with V3.x.x)        #
+#           Written & Tested on Python 3.4.10/3.8.5 on MacOS and Win10      #
 #                                                                           #
 #############################################################################
 
@@ -100,7 +100,7 @@ while goodexpression == False:
 goodexpression = False
 while goodexpression == False:
     print("\n")
-    print("Precision do you want (in decimal places):\n")
+    print("Desired precision (in decimal places):\n")
     rounding = input()
     
     try:
